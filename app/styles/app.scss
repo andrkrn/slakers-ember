@@ -1,32 +1,103 @@
-@import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap';
+@import 'bower_components/bootstrap-sass/assets/stylesheets/bootstrap';
 
-body {
-    -webkit-font-smoothing: antialiased;
+html, body {
+  font-size: 1em;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+  color: #eee;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  -webkit-user-select: none;
+  padding: 0;
 }
 
-#header {
-    background: #ddd;
-    height: 53px;
+#slackers-app {
+  @extend '.clearfix';
+  height: 100vh;
+  padding-bottom: 4em;
+}
+
+#client-ui {
+}
+
+#col-channels {
+  position: relative;
+  float: left;
+  width: 220px;
+  height: 100%;
+  background-color: #4D394B;
+
+  .col-channels-bg {
     position: fixed;
-    z-index: 100;
-    min-width: 8in;
-    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 220px;
+    background-color: #4D394B;
+  }
+}
+
+#channels {
+  position: relative;
+  z-index: 10;
+
+  h2 {
+    position: relative;
+    line-height: 1.25rem;
+    text-transform: uppercase;
+    color: rgb(171, 155, 169);
+    margin: 0 1rem .2rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+
+  .channel-list {
+    list-style-type: none;
+    color: rgb(171, 155, 169);
+    padding: 0;
+    width: 204px;
+
+    li {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      height: 1.5rem;
+      margin-right: 1px;
+      position: relative;
+      clear: both;
+      overflow: hidden;
+
+      a {
+        color: rgb(171, 155, 169);
+        display: block;
+        height: 1.5rem;
+        padding: 0px 0.5rem 0px 1rem;
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
+        background-clip: padding-box;
+        text-decoration: none;
+      }
+
+      a:hover {
+        background: rgb(62, 49, 60);
+      }
+    }
+  }
+}
+
+#col-messages {
+  margin-left: 220px;
+  background-color: #444;
+  height: 100%;
 }
 
 #footer {
-    position: fixed;
-    background: #ddd;
-    bottom: 0;
-    left: 220px;
-    right: 1rem;
-    height: 4rem;
-    z-index: 52;
-}
-
-#client-body {
-  margin-top: 53px;
-}
-
-.col-messages {
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 220px;
+  height: 4em;
+  background-color: #666;
 }
